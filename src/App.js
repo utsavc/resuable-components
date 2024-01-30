@@ -1,24 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import Toggle from "./Toggle/index";
+import { FaRegStar } from "react-icons/fa6";
+import Menu from "./Menu/index";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="toggle">
+        <Toggle>
+          <Toggle.Button>
+            <Toggle.On>
+              <FaRegStar className="icon" />
+            </Toggle.On>
+            <Toggle.Off>
+              <FaRegStar className="filled icon" />
+            </Toggle.Off>
+          </Toggle.Button>
+        </Toggle>
+      </div>
+
+
+
+      <Toggle>
+        <Menu>
+          <Toggle.Button>
+            <Menu.Button>Menu</Menu.Button>
+          </Toggle.Button>
+          <Toggle.On>
+            <Menu.DropDown>
+              <Menu.Item>Home</Menu.Item>
+              <Menu.Item>About</Menu.Item>
+              <Menu.Item>Contact</Menu.Item>
+            </Menu.DropDown>
+          </Toggle.On>
+        </Menu>
+      </Toggle>
+    </>
   );
 }
 
